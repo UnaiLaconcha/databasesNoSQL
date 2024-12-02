@@ -1,87 +1,52 @@
-Proyecto NoSQL con Docker
+<h1>Práctica: Análisis de Dinámica de Equipos Deportivos con Neo4j</h1>
 
-Este proyecto contiene varias bases de datos NoSQL (MongoDB, Cassandra, HBase, InfluxDB, Neo4j) montadas en contenedores Docker y scripts de Python para interactuar con ellas.
+<h2>Introducción</h2>
+<p>
+    Este proyecto tiene como objetivo modelar y analizar las relaciones dentro de equipos de fútbol femeninos que participan en la Liga Conferencia de la UEFA. Utilizando Neo4j, se busca comprender las dinámicas de trabajo en equipo y cómo estas afectan al rendimiento deportivo de las jugadoras, con un enfoque en la representación visual y el análisis eficiente de relaciones complejas. Este estudio servirá como punto de partida para un análisis más profundo en futuras fases.
+</p>
 
-## Requisitos Previos
+<h2>Configuración e Instrucciones de Ejecución de Neo4j</h2>
+<p>
+    Para ejecutar la interfaz visual de Neo4j y trabajar con los datos de la práctica, se deben seguir los siguientes pasos:
+</p>
+<ol>
+    <li><strong>Abrir WSL2:</strong> Asegúrate de tener WSL2 instalado y configurado en tu sistema.</li>
+    <li><strong>Crear una Carpeta para el Proyecto:</strong> En la terminal de WSL2, crea una carpeta llamada <code>databasesNoSQL</code> y accede a ella:
+        <pre>mkdir databasesNoSQL<br>cd databasesNoSQL</pre>
+    </li>
+    <li><strong>Clonar el Repositorio:</strong> Clona el repositorio de GitHub donde se encuentran los scripts necesarios para el proyecto y accede a él:
+        <pre>git clone [URL_DEL_REPOSITORIO]<br>cd [NOMBRE_DEL_REPOSITORIO]</pre>
+    </li>
+    <li><strong>Crear y Activar un Entorno Virtual:</strong> En la carpeta principal del proyecto, crea y activa un entorno virtual de Python para gestionar las dependencias de forma aislada:
+        <pre>python3 -m venv venv<br>source venv/bin/activate</pre>
+    </li>
+    <li><strong>Instalar las Dependencias de Python:</strong> Con el entorno virtual activado, instala las dependencias necesarias para el proyecto, incluyendo el controlador de Neo4j y otros módulos:
+        <pre>pip install pymongo cassandra-driver influxdb neo4j</pre>
+    </li>
+    <li><strong>Acceder a la Carpeta de Neo4j:</strong> Dentro del repositorio clonado, accede a la carpeta <code>neo4j</code> donde está el archivo <code>docker-compose.yml</code> con la configuración del contenedor Neo4j.</li>
+    <li><strong>Lanzar el Contenedor:</strong> Ejecuta el siguiente comando para lanzar el contenedor con Docker:
+        <pre>docker-compose up</pre>
+    </li>
+    <li><strong>Abrir Otra Terminal:</strong> Mientras el contenedor está corriendo, abre otra terminal de Ubuntu y ejecuta el siguiente comando para verificar que el contenedor se está ejecutando correctamente:
+        <pre>docker ps</pre>
+        Esto mostrará información sobre el contenedor en ejecución, incluyendo el nombre <code>neo4j_db</code> y los puertos asignados.
+    </li>
+    <li><strong>Obtener la Dirección IP del Contenedor:</strong> Abre una terminal de WSL2 y ejecuta el siguiente comando para obtener la dirección IP del contenedor:
+        <pre>ip addr | grep eth0</pre>
+        Esto debería mostrar algo similar a: <code>inet 172.25.176.1/20 brd 172.25.191.255 scope global eth0</code>
+    </li>
+    <li><strong>Abrir la Interfaz Visual de Neo4j:</strong> Utiliza la dirección IP obtenida y el puerto <code>7474</code> para acceder a la interfaz visual de Neo4j en tu navegador:
+        <pre>http://172.25.176.1:7474</pre>
+    </li>
+    <li><strong>Acceder a la Cuenta de Neo4j:</strong> Una vez en la interfaz visual, utiliza las credenciales definidas en el archivo <code>docker-compose.yml</code> para acceder:
+        <ul>
+            <li>Usuario: <code>neo4j</code></li>
+            <li>Contraseña: <code>entrega2</code></li>
+        </ul>
+    </li>
+</ol>
 
-Docker y Docker Compose: Para levantar los contenedores.
-
-Python 3 y Pip: Para ejecutar los scripts de Python.
-
-Git: Para clonar el repositorio.
-
-Instrucciones para Ejecutar el Proyecto
-
-1. Clonar el Repositorio
-
-git clone https://github.com/UnaiLaconcha/databasesNoSQL.git
-cd databasesNoSQL
-
-2. Levantar los Contenedores
-
-Cada base de datos tiene su propia configuración de Docker Compose. Navega a cada carpeta y ejecuta:
-
-MongoDB:
-
-cd MongoDB
-docker-compose up -d
-
-Cassandra:
-
-cd ../Cassandra
-docker-compose up -d
-
-InfluxDB:
-
-cd ../InfluxDB
-docker-compose up -d
-
-HBase:
-
-cd ../HBase
-docker-compose up -d
-
-Neo4j:
-
-cd ../Neo4j
-docker-compose up -d
-
-3. Crear y Activar un Entorno Virtual
-
-En la carpeta principal del proyecto:
-
-python3 -m venv venv
-source venv/bin/activate  # Linux/WSL2/Mac
-
-4. Instalar las Dependencias de Python
-
-Con el entorno virtual activado:
-
-pip install pymongo cassandra-driver influxdb neo4j
-
-5. Ejecutar los Scripts de Inserción y Consulta
-
-Navega a la carpeta scripts para ejecutar los scripts correspondientes:
-
-cd scripts
-
-# Insertar y consultar datos en MongoDB
-python MongoDBinsercion.py
-python MongoDBconsultas.py
-
-# Insertar y consultar datos en Cassandra
-python Cassandrainsercion.py
-python Cassandraconsultas.py
-
-Detalles Adicionales
-
-Cada contenedor está configurado para exponer los puertos estándar de cada base de datos. Asegúrate de que los puertos (como el 27017 para MongoDB) no estén ocupados por otros servicios en tu máquina.
-
-Recuerda que cada base de datos tiene su archivo docker-compose.yml independiente, lo cual te permite levantar y detener cada base de datos según sea necesario.
-
-Utilizar un entorno virtual para Python es opcional, pero altamente recomendado para evitar conflictos con otras librerías de Python instaladas globalmente.
-
-Contacto
-
-Si tienes alguna pregunta o encuentras algún problema, no dudes en abrir un issue en el repositorio o contactar al autor.
-
+<h2>Conclusiones</h2>
+<p>
+    Este proyecto ha establecido una base sólida para la representación de datos complejos utilizando Neo4j. Se ha demostrado la capacidad de Neo4j para modelar relaciones complejas de forma intuitiva y eficiente, lo cual es fundamental en el análisis de dinámicas sociales como las del trabajo en equipo en el contexto deportivo. Aunque esta práctica se ha centrado principalmente en la configuración y almacenamiento de datos, el modelo establecido proporciona un punto de partida excelente para futuros análisis detallados del comportamiento cooperativo en equipos de fútbol.
+</p>
