@@ -2,7 +2,7 @@ Proyecto NoSQL con Docker
 
 Este proyecto contiene varias bases de datos NoSQL (MongoDB, Cassandra, HBase, InfluxDB, Neo4j) montadas en contenedores Docker y scripts de Python para interactuar con ellas.
 
-Requisitos Previos
+## Requisitos Previos
 
 Docker y Docker Compose: Para levantar los contenedores.
 
