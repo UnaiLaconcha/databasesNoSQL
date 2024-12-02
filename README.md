@@ -15,7 +15,7 @@
         <pre>mkdir databasesNoSQL<br>cd databasesNoSQL</pre>
     </li>
     <li><strong>Clonar el Repositorio:</strong> Clona el repositorio de GitHub donde se encuentran los scripts necesarios para el proyecto y accede a él:
-        <pre>git clone [[URL_DEL_REPOSITORIO]](https://github.com/UnaiLaconcha/databasesNoSQL.git)<br>cd databasesNoSQL</pre>
+        <pre>git clone https://github.com/UnaiLaconcha/databasesNoSQL.git <br>cd databasesNoSQL</pre>
     </li>
     <li><strong>Crear y Activar un Entorno Virtual:</strong> En la carpeta principal del proyecto, crea y activa un entorno virtual de Python para gestionar las dependencias de forma aislada:
         <pre>python3 -m venv venv<br>source venv/bin/activate</pre>
