@@ -12,7 +12,7 @@
 <ol>
     <li><strong>Abrir WSL2:</strong> Asegúrate de tener WSL2 instalado y configurado en tu sistema.</li>
     <li><strong>Crear una Carpeta para el Proyecto:</strong> En la terminal de WSL2, crea una carpeta llamada <code>databasesNoSQL</code> y accede a ella:
-        <pre>mkdir Practica2<br>cd Practica2</pre>
+        <pre>mkdir practica2<br>cd practica2</pre>
     </li>
     <li><strong>Clonar el Repositorio:</strong> Clona el repositorio de GitHub donde se encuentran los scripts necesarios para el proyecto y accede a él:
         <pre>git clone https://github.com/UnaiLaconcha/databasesNoSQL.git <br>cd databasesNoSQL</pre>
