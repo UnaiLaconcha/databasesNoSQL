@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 # Configuración para conectarse a la base de datos Neo4j
 uri = "bolt://localhost:7687"
 username = "neo4j"
-password = "securepassword"
+password = "entrega2"
 
 driver = GraphDatabase.driver(uri, auth=(username, password))
 

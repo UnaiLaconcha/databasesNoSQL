@@ -21,7 +21,7 @@
         <pre>python3 -m venv venv<br>source venv/bin/activate</pre>
     </li>
     <li><strong>Instalar las Dependencias de Python:</strong> Con el entorno virtual activado, instala las dependencias necesarias para el proyecto, incluyendo el controlador de Neo4j y otros módulos:
-        <pre>pip install pymongo cassandra-driver influxdb neo4j</pre>
+        <pre>pip install neo4j datetime</pre>
     </li>
     <li><strong>Acceder a la Carpeta de Neo4j:</strong> Dentro del repositorio clonado, accede a la carpeta <code>neo4j</code> donde está el archivo <code>docker-compose.yml</code> con la configuración del contenedor Neo4j.</li>
     <li><strong>Lanzar el Contenedor:</strong> Ejecuta el siguiente comando para lanzar el contenedor con Docker:
